@@ -27,7 +27,7 @@ def download(name, size):
      os.system("pkg install git clang make perl openssl -y")
      os.system("git clone https://github.com/openwall/john.git")
      os.system("cd john/src")
-     os.system("./configure
+     os.system("./configure")
 make -s clean && make -sj4")
      os.system("cd ../run")
     for i in range(101):
