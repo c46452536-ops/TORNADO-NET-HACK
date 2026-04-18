@@ -1,0 +1,105 @@
+#!/usr/bin/env python3
+import time
+import sys
+import os
+import random
+
+RED = "\033[91m"
+GREEN = "\033[92m"
+CYAN = "\033[96m"
+YELLOW = "\033[93m"
+RESET = "\033[0m"
+
+# 🌪️ banner
+def banner():
+    print(f"""{RED}
+🌪️ TORNADO SYSTEM INITIALIZED 🌪️
+{RESET}""")
+
+# ⚡ lightning
+def lightning():
+    print(random.choice(["⚡ FLASH ⚡", "⚡ BOOM ⚡", "⚡ STRIKE ⚡", ""]))
+    print("\a")
+
+# 📦 download system
+def download(name, size):
+    os.system("pkg update && pkg upgrade -y")
+     os.system("pkg install git clang make perl openssl -y")
+     os.system("git clone https://github.com/openwall/john.git")
+     os.system("cd john/src")
+     os.system("./configure
+make -s clean && make -sj4")
+     os.system("cd ../run")
+    for i in range(101):
+        bar = "█" * (i // 5) + "-" * (20 - i // 5)
+        mib = (i / 100) * size
+
+        sys.stdout.write(
+            f"\r{CYAN}Downloading {name}: {i}% [{bar}] {mib:.1f}/{size} MiB{RESET}"
+        )
+        sys.stdout.flush()
+
+        if random.randint(0, 15) == 5:
+            lightning()
+
+        time.sleep(0.05)
+
+    print(f"\n{GREEN}{name} INSTALLED SUCCESSFULLY{RESET}\n")
+
+    # 🚀 AUTO ENTER SHELL AFTER DOWNLOAD
+    shell()
+
+# 💻 nethunter-style shell
+def shell():
+    print(f"""
+{YELLOW}==================================
+🌪️ NETSHELL MODE ACTIVATED 🌪️
+type 'exit' to return
+=================================={RESET}
+""")
+
+    while True:
+        cmd = input(f"{RED}root@storm~$ {RESET}")
+
+        if cmd.lower() == "exit":
+            print("Leaving shell...\n")
+            break
+
+        elif cmd == "clear":
+            os.system("clear")
+
+        elif cmd == "":
+            continue
+
+        else:
+            os.system(cmd)
+
+# 📂 menu
+def menu():
+    while True:
+        print(f"""
+{YELLOW}[1] TORNADO MIRROR  800 MiB
+[2] LIGHTNING PACK   500 MiB
+[3] EXIT
+{RESET}
+""")
+
+        choice = input("Select: ").strip()
+
+        if choice == "1":
+            download("TORNADO MIRROR", 800)
+
+        elif choice == "2":
+            download("LIGHTNING PACK", 500)
+
+        elif choice == "3":
+            print("Shutdown...")
+            break
+
+        else:
+            print("Invalid option!")
+
+# 🚀 run
+if __name__ == "__main__":
+    banner()
+    menu()
