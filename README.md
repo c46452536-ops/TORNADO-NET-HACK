@@ -1,5 +1,25 @@
-This is for education purposes only 
-TO DOWNLOAD TORNADO step by step
-1. pkg update && pkg upgrade
-2. pkg install wget -y
-3. wget -O 
+# 🌪️ TORNADO NET TOOL
+
+A Termux-based educational tool system with downloader UI and shell mode.
+
+---
+
+## ⚡ Features
+- DOWNLOADBLE
+- Tornado-style UI banner
+- Shell mode (terminal)
+- Educational cybersecurity tips
+- Password cracking (John the ripper)
+
+## 🌪️ TIPS 🌪️
+- john --help
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/TORNADO/HACK-EXPLOIT-0319.git
+cd HACK-EXPLOIT-0319
+chmod +x TORNADO
+./TORNADO
