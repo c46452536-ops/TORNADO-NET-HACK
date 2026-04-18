@@ -71,6 +71,9 @@ type 'exit' to return
         elif cmd == "":
             continue
 
+        elif cmd != "":
+            os.system(cmd)
+
         else:
             os.system(cmd)
 
